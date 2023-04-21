@@ -4,7 +4,7 @@
 
 #pragma once
 #include"Drawer.h"
-
+#define TIMER_ELAPSE 25
 // Диалоговое окно MyDlg
 class MyDlg : public CDialogEx
 {
@@ -32,4 +32,16 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	Drawer drw;
+	afx_msg void OnBnClickedOk();
+	CEdit w1Ctrl;
+	CEdit w2Ctrl;
+	afx_msg void OnBnClickedCheck1();
+	bool WasDataInputed;
+	CButton StartButtonCtrl;
+	CButton CBCtrl;
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+
+	UINT_PTR TimerId;
+	CSliderCtrl SliderCtrl;
+	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 };
